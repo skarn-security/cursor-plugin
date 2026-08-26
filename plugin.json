@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "skarn",
+  "description": "Skarn for Cursor: audit your AI coding sessions and assistant configs for leaked credentials and risky configuration, and run the pre-execution guard. Backed by the Skarn detection engine on your machine; the skarn binary is installed separately.",
+  "author": {
+    "name": "Skarn",
+    "url": "https://getskarn.com"
+  },
+  "homepage": "https://getskarn.com",
+  "repository": "https://github.com/skarn-security/cursor-plugin",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "secrets",
+    "credentials",
+    "mcp",
+    "audit"
+  ],
+  "version": "0.25.0"
+}

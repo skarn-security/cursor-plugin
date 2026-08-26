@@ -1,0 +1,5 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sweep mark">
+  <path d="M50 13 L81 25 V50 C81 71 67 83 50 88 C33 83 19 71 19 50 V25 Z"
+        fill="none" stroke="#0B0F14" stroke-width="8" stroke-linejoin="round"/>
+  <line x1="32" y1="51" x2="68" y2="51" stroke="#2FE3B0" stroke-width="9" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,32 @@
+{
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "type": "command",
+        "command": "SKARN_GUARD_LOG=$HOME/.cache/skarn/guard-cursor-audit.jsonl skarn guard --agent cursor --guard-mode audit",
+        "timeout": 5
+      }
+    ],
+    "beforeShellExecution": [
+      {
+        "type": "command",
+        "command": "SKARN_GUARD_LOG=$HOME/.cache/skarn/guard-cursor-audit.jsonl skarn guard --agent cursor --guard-mode audit",
+        "timeout": 5
+      }
+    ],
+    "beforeMCPExecution": [
+      {
+        "type": "command",
+        "command": "SKARN_GUARD_LOG=$HOME/.cache/skarn/guard-cursor-audit.jsonl skarn guard --agent cursor --guard-mode audit",
+        "timeout": 5
+      }
+    ],
+    "beforeReadFile": [
+      {
+        "type": "command",
+        "command": "SKARN_GUARD_LOG=$HOME/.cache/skarn/guard-cursor-audit.jsonl skarn guard --agent cursor --guard-mode audit --strict",
+        "timeout": 5
+      }
+    ]
+  }
+}

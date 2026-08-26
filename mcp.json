@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "skarn": {
+      "command": "skarn",
+      "args": ["mcp"]
+    }
+  }
+}
