@@ -1,6 +1,6 @@
 ---
 name: skarn-audit
-description: Audit this machine's AI coding sessions and assistant configs with skarn. Use when the user says scan this with skarn, run skarn, or skarn audit; asks whether a secret leaked into an AI coding session; wants an assistant config (hooks, MCP servers, permissions, plugins) vetted; or asks whether a Claude, Codex, Cursor, Copilot, or Gemini setup is safe. Not for scanning a source tree or repository for secrets, and not a code review. Runs skarn assess and skarn vet offline and reads only redacted output.
+description: Audit this machine's AI coding sessions and assistant configs with skarn. Use when the user says scan this with skarn, run skarn, or skarn audit; asks whether a secret leaked into an AI coding session; wants an assistant config (hooks, MCP servers, permissions, plugins) vetted; or asks whether a Claude Code, Codex, Cursor, Copilot, or Gemini setup is safe. Not for scanning a source tree or repository for secrets, and not a code review. Runs skarn assess and skarn vet offline and reads only redacted output.
 compatibility: Requires the skarn binary on PATH (https://getskarn.com/install/); installing it needs network access. Once installed, every skarn command this skill runs works offline and without a license.
 ---
 

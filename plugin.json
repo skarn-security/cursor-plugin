@@ -4,6 +4,7 @@
   "description": "Skarn for Cursor: audit your AI coding sessions and assistant configs for leaked credentials and risky configuration, and run the pre-execution guard. Backed by the Skarn detection engine on your machine; the skarn binary is installed separately.",
   "author": {
     "name": "Skarn",
+    "email": "hello@getskarn.com",
     "url": "https://getskarn.com"
   },
   "homepage": "https://getskarn.com",
@@ -16,5 +17,5 @@
     "mcp",
     "audit"
   ],
-  "version": "0.25.0"
+  "version": "0.26.0"
 }

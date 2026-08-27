@@ -62,7 +62,7 @@ If you would rather not install the binary yourself, a version-pinned npx form w
   "mcpServers": {
     "skarn": {
       "command": "npx",
-      "args": ["-y", "@skarn-security/skarn@0.25.0", "mcp"]
+      "args": ["-y", "@skarn-security/skarn@0.26.0", "mcp"]
     }
   }
 }
@@ -149,3 +149,11 @@ Every event this host fires, what it scans, how it blocks, and whether it is wir
 ## Reporting a vulnerability
 
 See SECURITY.md in this repository.
+
+## License, privacy, and support
+
+This repository is MIT licensed; see LICENSE. It carries configuration only, so that covers the two manifests, the hooks, the skill, and the MCP server declaration in it.
+
+The `skarn` binary those files invoke is a separate download and is not open source. It is licensed under the Skarn End User License Agreement at https://getskarn.com/terms/, and running it accepts that agreement. What it reads, what it keeps, and what it never sends anywhere: https://getskarn.com/privacy/.
+
+Support: hello@getskarn.com. Vulnerability reports go to security@getskarn.com; see SECURITY.md in this repository.
