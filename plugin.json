@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "skarn",
-  "description": "Skarn for Cursor: audit your AI coding sessions and assistant configs for leaked credentials and risky configuration, and run the pre-execution guard. Backed by the Skarn detection engine on your machine; the skarn binary is installed separately.",
+  "description": "Skarn for Cursor: audit your AI coding sessions and assistant configs for leaked credentials and risky configuration, and run the pre-execution guard. Backed by the Skarn detection engine on your machine; the skarn binary is installed separately. It declares one local MCP server, named skarn, with four tools (scan_sessions, vet_configs, list_sessions, session_stats): every tool is read-only, none of them writes or changes a file, none of them makes a network call, and every matched value comes back masked.",
   "author": {
     "name": "Skarn",
     "email": "hello@getskarn.com",
@@ -17,5 +17,5 @@
     "mcp",
     "audit"
   ],
-  "version": "0.28.0"
+  "version": "0.29.0"
 }
