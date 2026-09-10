@@ -62,7 +62,7 @@ If you would rather not install the binary yourself, a version-pinned npx form w
   "mcpServers": {
     "skarn": {
       "command": "npx",
-      "args": ["-y", "@skarn-security/skarn@0.29.0", "mcp"]
+      "args": ["-y", "@skarn-security/skarn@0.30.0", "mcp"]
     }
   }
 }
