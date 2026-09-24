@@ -12,7 +12,7 @@ brew install skarn-security/tap/skarn
 
 Or run `npm install -g @skarn-security/skarn`, or put the release download from https://github.com/skarn-security/skarn-dist/releases/latest on your PATH. Confirm it with `skarn --version`.
 
-The Cursor Marketplace listing is pending, so clone the plugin where Cursor reads local plugins:
+Clone the plugin where Cursor reads local plugins:
 
 ```sh
 mkdir -p ~/.cursor/plugins/local
@@ -49,7 +49,7 @@ Without the binary, a pinned launcher works:
   "mcpServers": {
     "skarn": {
       "command": "npx",
-      "args": ["-y", "@skarn-security/skarn@0.31.0", "mcp"]
+      "args": ["-y", "@skarn-security/skarn@0.32.0", "mcp"]
     }
   }
 }
