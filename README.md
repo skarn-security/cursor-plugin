@@ -49,7 +49,7 @@ Without the binary, a pinned launcher works:
   "mcpServers": {
     "skarn": {
       "command": "npx",
-      "args": ["-y", "@skarn-security/skarn@0.32.0", "mcp"]
+      "args": ["-y", "@skarn-security/skarn@0.33.0", "mcp"]
     }
   }
 }
