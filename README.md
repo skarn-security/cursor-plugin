@@ -49,13 +49,13 @@ Without the binary, a pinned launcher works:
   "mcpServers": {
     "skarn": {
       "command": "npx",
-      "args": ["-y", "@skarn-security/skarn@0.33.0", "mcp"]
+      "args": ["-y", "@skarn-security/skarn@0.34.0", "mcp"]
     }
   }
 }
 ```
 
-npx downloads the package on the first start, so that start is slower and needs network access. Keep the version pinned; `skarn vet` reports the unpinned form as `vet-mcp-unpinned`.
+npx downloads the package on the first start, so that start is slower and needs network access. Keep the version pinned; `skarn vet` reports the unpinned form as `vet-mcp-unpinned`, and a credential written as a literal into a server's `env` or `headers` block as `vet-mcp-plaintext-credential`.
 
 ## Guard hooks
 
@@ -67,9 +67,9 @@ npx downloads the package on the first start, so that start is slower and needs 
 
 Deny means the action leaks a secret into an exfiltration channel, installs a likely malicious or typosquatted package, completes a multi-phase attack chain, or trips a critical rule. Ask means a secret is present with no exfiltration channel in the call, or a high-severity finding fires. Allow emits nothing.
 
-The guard fails open: a malformed event, an out-of-scope action, or a guard error yields allow, unless a licensed enforce runs `--strict`.
+In enforce, an unparseable event exits 2 (Cursor's hard block) and a tool input the guard cannot fully classify asks, or denies under `--strict`; the guard log records the policy verdict, ask, or deny under `--strict`, for both, including the exit-2 case. An out-of-scope action allows, and a scan-infrastructure failure allows unless a licensed enforce runs `--strict`.
 
-The hooks run on macOS and Linux only. Each `command` carries a POSIX `VAR=value cmd` prefix that neither PowerShell nor `cmd.exe` accepts, so on native Windows all four entries fail before `skarn guard` starts, and Cursor lets the action through unscanned. The MCP server and the skill work on every platform; for a guard on native Windows, use the Codex CLI plugin at https://github.com/skarn-security/agent-guard. Cursor has no pre-execution file-write gate, so these hooks do not block a write to disk, and each action is evaluated on its own, with no chain state across actions.
+The hooks run on macOS and Linux only. Each `command` carries a POSIX `VAR=value cmd` prefix that neither PowerShell nor `cmd.exe` accepts, so on native Windows all four entries fail before `skarn guard` starts, and Cursor lets the action through unscanned. `skarn setup --agent cursor` still writes them there and prints one warning line that says so, and `skarn doctor` reports no hook wired. The setup self-test does not exercise that path, so its pass does not mean the hook runs. The MCP server and the skill work on every platform; for a guard on native Windows, use the Codex CLI plugin at https://github.com/skarn-security/agent-guard. Cursor has no pre-execution file-write gate, so these hooks do not block a write to disk, and each action is evaluated on its own, with no chain state across actions.
 
 Every event this host fires, and how each one blocks: run `man skarn-guard`, or read https://getskarn.com/manual/.
 
@@ -97,7 +97,7 @@ If the `skarn` row reads `Error - Show Output`, open Show Output. The last error
 - `error: unknown command 'mcp'`: the binary predates the MCP server. Upgrade skarn.
 - `[unauthenticated] Error`: you are signed out of Cursor, which stops every plugin MCP server. Sign in.
 
-If the hooks do not fire, confirm the plugin is loaded and that `skarn --version` works. The guard fails open, so a missing binary shows as silence.
+If the hooks do not fire, confirm the plugin is loaded and that `skarn --version` works. A missing binary fails open on Cursor's side, so it shows as silence.
 
 ## License, privacy, and support
 
